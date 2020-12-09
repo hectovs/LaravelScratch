@@ -22,6 +22,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 // Route::get('/posts/{post}', function($post){
 //     $posts = [
 //         "post1" => "My first blog post",
