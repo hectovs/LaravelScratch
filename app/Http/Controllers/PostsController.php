@@ -10,12 +10,9 @@ class PostsController extends Controller
 {
     public function show($slug)
     {
-        $post = Post::where('slug',$slug)->firstorFail();
-
-        
-
+      
         return view('post',
-        ['post'=> $post
+        ['post'=> Post::where('slug',$slug)->firstorFail()
         ]);
         
     }
