@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 // Route::get('/posts/{post}', function($post){
 //     $posts = [
 //         "post1" => "My first blog post",
