@@ -31,6 +31,12 @@ class ArticlesController extends Controller
     {
         $article = new Article();
 
+        request()->validate([
+            "title" =>'required',
+            "Excerpt" =>'required',
+            "Body" =>'required'
+        ]);
+
         $article->title = request("title");
         $article->Excerpt = request("Excerpt");
         $article->Body = request("Body");
@@ -52,6 +58,12 @@ class ArticlesController extends Controller
     public function update($id)
     {
         $article = Article::find($id);
+
+        request()->validate([
+            "title" =>'required',
+            "Excerpt" =>'required',
+            "Body" =>'required'
+        ]);
 
         $article->title = request("title");
         $article->Excerpt = request("Excerpt");
