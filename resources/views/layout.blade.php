@@ -17,9 +17,9 @@ Released   : 20140225
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="css/default.css" rel="stylesheet"  />
-<link href="css/fonts.css" rel="stylesheet"  />
-<link rel="stylesheet" href="/css/app.css"/>
+<link href="/css/default.css" rel="stylesheet"  />
+<link href="/css/fonts.css" rel="stylesheet"  />
+<!-- <link rel="stylesheet" href="/css/app.css"/> -->
 
 
 </head>
@@ -34,7 +34,7 @@ Released   : 20140225
                     <li class="{{Request::path()==='/' ? 'current_page_item' : '' }}"><a href="/" accesskey="1" title="">Homepage</a></li>
                     <li class="{{Request::path()==='clients' ? 'current_page_item' : '' }}"><a href="#" accesskey="1" title="">Our Clients</a></li>
                     <li class="{{Request::path()==='about' ? 'current_page_item' : '' }}"><a href="/about" accesskey="1" title="">About Us</a></li>
-                    <li class="{{Request::path()==='careers' ? 'current_page_item' : '' }}"><a href="#" accesskey="1" title="">Careers</a></li>
+                    <li class="{{Request::path()==='articles' ? 'current_page_item' : '' }}"><a href="/articles" accesskey="1" title="">Articles</a></li>
                     <li class="{{Request::path()==='contact' ? 'current_page_item' : '' }}"><a href="/contact" accesskey="1" title="">Contact Us</a></li>
                 </ul>
             </div>

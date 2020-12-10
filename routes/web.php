@@ -30,6 +30,9 @@ Route::get('/about', function () {
     ]);
 });
 
+Route::get('/articles', 'App\Http\Controllers\ArticlesController@index');
+Route::get('/articles/{article}', 'App\Http\Controllers\ArticlesController@show');
+
 // Route::get('/posts/{post}', function($post){
 //     $posts = [
 //         "post1" => "My first blog post",
