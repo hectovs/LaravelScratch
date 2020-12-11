@@ -36,7 +36,7 @@ class ArticlesController extends Controller
         // validate() returns an array called $validatedattributes 
         //and this contains the info required to create an $article class
         
-        return redirect("/articles");
+        return redirect(route('articles.index'));
 
     }
 
@@ -57,7 +57,7 @@ class ArticlesController extends Controller
         //and this contains the info required to update an $article class
         
         
-        return redirect('/articles/'.$article->id);
+        return redirect($article->path());
     }
     protected function validateArticle()
     {
