@@ -25,23 +25,23 @@
                 </div>
 
                 <div class="field">
-                    <label class="label" for="Excerpt"> Excerpt </label>
+                    <label class="label" for="excerpt"> Excerpt </label>
 
                     <div class= "control">
-                        <textarea class="textarea @error('Excerpt') is-danger @enderror" type="text" name="Excerpt" id="Excerpt" value="{{old('excerpt')}}"></textarea>
-                        @error('Excerpt')
-                            <p class="help is-danger"> {{$errors -> first('Excerpt')}}</p>
+                        <textarea class="textarea @error('excerpt') is-danger @enderror" type="text" name="excerpt" id="excerpt" value="{{old('excerpt')}}"></textarea>
+                        @error('excerpt')
+                            <p class="help is-danger"> {{$errors -> first('excerpt')}}</p>
                         @enderror
                     </div>
                 </div>
 
                 <div class="field">
-                    <label class="label" for="Body"> Body </label>
+                    <label class="label" for="body"> Body </label>
 
                     <div class= "control">
-                        <textarea class="textarea @error('Body') is-danger @enderror" type="text" name="Body" id="Body" value="{{old('Body')}}"></textarea>
-                        @error('Body')
-                            <p class="help is-danger"> {{$errors -> first('Body')}}</p>
+                        <textarea class="textarea @error('body') is-danger @enderror" type="text" name="body" id="body" value="{{old('body')}}"></textarea>
+                        @error('body')
+                            <p class="help is-danger"> {{$errors -> first('body')}}</p>
                         @enderror
                     </div>
                 </div>
