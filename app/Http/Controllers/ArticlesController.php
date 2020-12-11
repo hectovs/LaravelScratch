@@ -14,9 +14,9 @@ class ArticlesController extends Controller
     return view('articles.index', ['articles' => $articles]);
 
     }
-    public function show($id)
+    public function show(Article $article)
     {
-    $article = Article::find($id);
+    
 
     return view('articles.show', ['article' => $article]);
 
@@ -47,17 +47,17 @@ class ArticlesController extends Controller
 
     }
 
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::find($id);
+        
         
         
         return view('articles.edit', compact('article'));
     }
 
-    public function update($id)
+    public function update(Article $article)
     {
-        $article = Article::find($id);
+        
 
         request()->validate([
             "title" =>'required',
