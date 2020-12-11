@@ -15,4 +15,9 @@ class article extends Model
     {
         return route('articles.show', $this);
     }
+
+    public function user(Type $var = null)
+    {
+        # code...
+    }
 }
