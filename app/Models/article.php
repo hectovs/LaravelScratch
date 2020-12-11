@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
-class article extends Model
+class Article extends Model
 {
     use HasFactory;
 
@@ -16,8 +17,8 @@ class article extends Model
         return route('articles.show', $this);
     }
 
-    public function user(Type $var = null)
+    public function author()
     {
-        # code...
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
