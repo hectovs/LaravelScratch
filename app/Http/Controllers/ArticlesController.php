@@ -3,23 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\models\Article;
+use App\models\Tag;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {   
     public function index()
     {
-    $articles = Article::latest()->get();
+        if (request('tag')) {
+            $articles = Tag::where('name', request('tag'))->firstorFail()->articles;
+        }
+        else {
+            $articles = Article::latest()->get();
+        }
 
-    return view('articles.index', ['articles' => $articles]);
+        
+
+        return view('articles.index', ['articles' => $articles]);
 
     }
     public function show(Article $article)
     {
-    
-
-    return view('articles.show', ['article' => $article]);
-
+        return view('articles.show', ['article' => $article]);
     }
 
     public function create()
@@ -42,9 +47,6 @@ class ArticlesController extends Controller
 
     public function edit(Article $article)
     {
-        
-        
-        
         return view('articles.edit', compact('article'));
     }
 

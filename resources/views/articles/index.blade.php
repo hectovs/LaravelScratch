@@ -9,14 +9,18 @@
    
             <div id="page">
                 <ul class="container">
-                    @foreach ($articles as $article)
+                    
+                    @forelse ($articles as $article)
                         <li class="first">
                             <h3>
                                 <a href="{{$article->path()}}">{{$article->title}}</a>
                             </h3>
                             <p><a href="/articles/{{$article->id}}">{{$article->excerpt}}</a></p>
                         </li>
-                    @endforeach
+
+                    @empty
+                        <p>No relevant articles yet!</p>    
+                    @endforelse
                 </ul>
 
                 </div>
