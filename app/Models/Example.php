@@ -9,20 +9,15 @@ class Example extends Model
 {
     use HasFactory;
 
-    protected $collaborator;
+    protected $apikey;
 
-    protected $foo;
-
-    public function __construct(Collaborator $collaborator, $foo)
+    public function __construct($apikey)
     {
-        $this->collaborator = $collaborator;
-        $this->foo = $foo; 
+        $this->apikey = $apikey; 
     }
 
-    // protected $foo; 
-
-    // public function __construct($foo)
-    // {
-    //     $this->foo = $foo; 
-    // }
+    public function handle()
+    {
+        die('it works');
+    }
 }
