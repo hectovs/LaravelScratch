@@ -9,8 +9,20 @@ class Example extends Model
 {
     use HasFactory;
 
-    public function go()
+    protected $collaborator;
+
+    protected $foo;
+
+    public function __construct(Collaborator $collaborator, $foo)
     {
-        dump('it works');
+        $this->collaborator = $collaborator;
+        $this->foo = $foo; 
     }
+
+    // protected $foo; 
+
+    // public function __construct($foo)
+    // {
+    //     $this->foo = $foo; 
+    // }
 }

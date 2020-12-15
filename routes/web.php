@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Models\Example;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,18 +38,32 @@ Route::get('/articles/{article}', 'App\Http\Controllers\ArticlesController@show'
 Route::get('/articles/{article}/edit', 'App\Http\Controllers\ArticlesController@edit');
 Route::put('/articles/{article}', 'App\Http\Controllers\ArticlesController@update');
 
-Route::get('/container', function ()
-{
-    $container = new \App\Models\Container();
 
-    $container->bind('example', function() {
-        return new \App\Models\Example(); 
-    });
 
-    $example = $container -> resolve('example');
+Route::get('/pages', 'App\Http\Controllers\PagesController@home');
+    
 
-    $example->go();
+
+
+Route::get('/example', function (App\Models\Example $example) {
+    // $example=resolve(App\Models\example::class);
+
+    ddd($example);
+    
 });
+// Route::get('/container', function ()
+// {
+//     $container = new \App\Models\Container();
+
+//     $container->bind('example', function() {
+//         return new \App\Models\Example(); 
+//     });
+
+//     $example = $container -> resolve('example');
+
+//     $example->go();
+// });
+
 // Route::get('/posts/{post}', function($post){
 //     $posts = [
 //         "post1" => "My first blog post",
