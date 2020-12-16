@@ -7,6 +7,7 @@ use Egulias\EmailValidator\Validation\EmailValidation;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Concerns\FilterEmailValidation;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMe;
 
 
 class ContactController extends Controller
@@ -20,14 +21,8 @@ class ContactController extends Controller
     {
         request()->validate(['email'=>'required|email']);
         
-        Mail::raw('it works', function ($message) {
-            
-            $message->sender('john@johndoe.com', 'John Doe');
-            $message->to(request('email'));
-            $message->replyTo('john@johndoe.com', 'John Doe');
-            $message->subject('Hello there!');
-            $message->priority(3);
-        });
+        Mail::to(request('email'))
+            ->send(new ContactMe('Shirts'));
 
         return redirect('/contact')
             ->with('message', 'Email Sent');
