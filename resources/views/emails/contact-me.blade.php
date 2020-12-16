@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>It works again!</h1>
+@component('mail::message')
 
-    <p>It sounds like you want to hear more about {{ $topic }}</p>
+# A Heading 
 
-</body>
-</html>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut delectus, explicabo totam nihil ipsum aliquid. 
+Tempore provident voluptate totam fuga omnis! Ad harum saepe dolore fugit numquam perferendis aspernatur qui.
+
+-A list 
+-that 
+-goes
+-here
+
+@component('mail::button', ['url'=>'https://google.co.uk'])
+Visit google
+@endcomponent
+
+@endcomponent 

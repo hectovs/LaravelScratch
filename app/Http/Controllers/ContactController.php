@@ -7,7 +7,7 @@ use Egulias\EmailValidator\Validation\EmailValidation;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Concerns\FilterEmailValidation;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMe;
+use App\Mail\Contact;
 
 
 class ContactController extends Controller
@@ -22,7 +22,8 @@ class ContactController extends Controller
         request()->validate(['email'=>'required|email']);
         
         Mail::to(request('email'))
-            ->send(new ContactMe('Shirts'));
+            ->send(new Contact());
+           
 
         return redirect('/contact')
             ->with('message', 'Email Sent');
